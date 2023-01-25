@@ -19,8 +19,8 @@ public class PlayerControler : MonoBehaviour
     private Vector3 _direction=new();
 
     private bool isHWall = false, isVWall = false;
-    [SerializeField]
-    private Canvas _canvasUIPrefab;
+    
+    private static string _canvasUIPrefabName= "UI Player";
 
     private void Awake()
     {
@@ -30,7 +30,7 @@ public class PlayerControler : MonoBehaviour
         {
             _ball.ResetBall(transform.position + Vector3.forward * 1.1f, Vector3.forward);
         }
-        Instantiate(_canvasUIPrefab).targetDisplay=(int) _player;
+        Instantiate(Resources.Load<Canvas>(_canvasUIPrefabName)).targetDisplay=(int) _player;
     }
     private void OnEnable()
     {
