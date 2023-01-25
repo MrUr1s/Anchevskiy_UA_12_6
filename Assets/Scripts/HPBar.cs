@@ -27,10 +27,14 @@ public class HPBar : MonoBehaviour
     private void DrawHP(int hp)
     {
         _tMP_Text.text = "<size=36> <color=red>Amount HP:" + hp + " </color></size>";
-
-        Transform temp = default; 
+        if (hearts.Count == hp)
+        {
+            hearts.ForEach(h => h.gameObject.SetActive(true));
+            return;
+        }
+            Transform temp = default; 
         if(hearts.Count > 0)
-            temp=hearts.Last(t =>t.gameObject.activeSelf);
+            temp=hearts.LastOrDefault(t =>t.gameObject.activeSelf);
         if(temp!=default)
         {
             temp.gameObject.SetActive(false);

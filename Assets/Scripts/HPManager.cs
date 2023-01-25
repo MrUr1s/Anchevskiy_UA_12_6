@@ -36,7 +36,8 @@ public class HPManager : MonoBehaviour
         _hp = _defaultHP;
         FindObjectOfType<Ball>().Reset();
         LevelManager.instance.Reset();
-           
+        hPDraw?.Invoke(_hp);
+
     }
     private void Awake()
     {

@@ -30,7 +30,7 @@ public class PlayerControler : MonoBehaviour
         {
             _ball.ResetBall(transform.position + Vector3.forward * 1.1f, Vector3.forward);
         }
-        Instantiate(_canvasUIPrefab, this.transform).targetDisplay=(int) _player;
+        Instantiate(_canvasUIPrefab).targetDisplay=(int) _player;
     }
     private void OnEnable()
     {
